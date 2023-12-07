@@ -76,36 +76,36 @@ public class Inventory {
 		return items.size();
 	}
     
-	 // Method to edit an item by its ID
-    public void editItem(int itemId) {
-        Product item = getItemById(itemId);
-        if (item != null) {
-            Scanner scan = new Scanner(System.in);
+	// Method to edit an item by its ID
+	public void editItem(int itemId) {
+	    Product item = getItemById(itemId);
+	    if (item != null) {
+	        Scanner scan = new Scanner(System.in);
 
-            // Display current details
-            System.out.println("Current details of the item:");
-            System.out.println(item);
+	        // Display current details
+	        System.out.println("Current details of the item:");
+	        System.out.println(item);
 
-            // Prompt user for new details
-            System.out.println("Enter new details for the item:");
+	        // Prompt user for new details
+	        System.out.println("Enter new details for the item:");
 
-            System.out.print("New Name: ");
-            String newName = scan.nextLine();
-            item.setName(newName);
+	        System.out.print("New Name: ");
+	        String newName = scan.nextLine();
+	        item.setName(newName);
 
-            System.out.print("New Quantity: ");
-            int newQuantity = scan.nextInt();
-            item.setQuantity(newQuantity);
+	        System.out.print("New Quantity: ");
+	        int newQuantity = getUserInputInt(scan);
+	        item.setQuantity(newQuantity);
 
-            System.out.print("New Price: ");
-            double newPrice = scan.nextDouble();
-            item.setPrice(newPrice);
+	        System.out.print("New Price: ");
+	        double newPrice = getUserInputDouble(scan);
+	        item.setPrice(newPrice);
 
-            System.out.println("Item updated successfully.");
-        } else {
-            System.out.println("Item not found with ID: " + itemId);
-        }
-    }
+	        System.out.println("Item updated successfully.");
+	    } else {
+	        System.out.println("Item not found with ID: " + itemId);
+	    }
+	}
 
  // Helper method to get a product by its ID
     private Product getItemById(int itemId) {
