@@ -128,4 +128,24 @@ public class Inventory {
     }
 
 
+    public static int getUserInputInt(Scanner scan) {
+        while (true) {
+            try {
+                return Integer.parseInt(scan.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please enter a valid integer.");
+            }
+        }
+    }
+
+    public static double getUserInputDouble(Scanner scan) {
+        while (true) {
+            try {
+                return Double.parseDouble(scan.nextLine());
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please enter a valid double.");
+            }
+        }
+    }
+    
 }
